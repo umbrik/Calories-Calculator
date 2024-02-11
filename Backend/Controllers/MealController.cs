@@ -1,5 +1,6 @@
 ﻿using Calories_Calculator.Database;
 using Calories_Calculator.Entities;
+using Calories_Calculator.Models;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Calories_Calculator.Controllers;
@@ -25,15 +26,13 @@ public class MealController : ControllerBase
     }
 
     [HttpPut]
-    public IActionResult Put([FromQuery] int personId,
-        [FromQuery] int foodId,
-        [FromQuery] float weight)
+    public IActionResult Put([FromBody] PutMealDto meal)
     {
         _context.Add<Meal>(new()
         {
-            PersonId = personId,
-            FoodId = foodId,
-            Weight = weight,
+            PersonId = meal.PersonId,
+            FoodId = meal.FoodId,
+            Weight = meal.Weight,
         });
 
         return Ok("Created");

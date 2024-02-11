@@ -1,4 +1,4 @@
-namespace Calories_Calculator.Models;
+namespace Calories_Calculator.Entities;
 
 public class Person : BaseEntity
 {

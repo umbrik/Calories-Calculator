@@ -1,5 +1,5 @@
 ﻿using Calories_Calculator.Database;
-using Calories_Calculator.Models;
+using Calories_Calculator.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Calories_Calculator.Controllers;

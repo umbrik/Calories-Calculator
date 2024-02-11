@@ -1,5 +1,5 @@
 ﻿using Calories_Calculator.Database;
-using Calories_Calculator.Models;
+using Calories_Calculator.Entities;
 using Microsoft.AspNetCore.Mvc;
 
 namespace Calories_Calculator.Controllers;
@@ -19,8 +19,9 @@ public class FoodController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Food> Get()
+    public IEnumerable<Food> Get([FromBody] Food foodParams)
     {
+        Console.WriteLine(foodParams.Id);
         return _context.Foods.ToList();
     }
 

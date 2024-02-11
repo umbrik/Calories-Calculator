@@ -1,6 +1,6 @@
 using Microsoft.AspNetCore.Identity;
 
-namespace Calories_Calculator.Models;
+namespace Calories_Calculator.Entities;
 
 public class IdentityBaseEntity : IdentityUser
 {

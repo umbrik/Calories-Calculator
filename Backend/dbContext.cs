@@ -1,4 +1,4 @@
-using Calories_Calculator.Models;
+using Calories_Calculator.Entities;
 using Microsoft.EntityFrameworkCore;
 
 namespace Calories_Calculator.Database

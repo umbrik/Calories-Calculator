@@ -1,4 +1,5 @@
 using Calories_Calculator.Database;
+using Calories_Calculator.Models;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -24,7 +25,20 @@ using (var scope = app.Services.CreateScope())
     var services = scope.ServiceProvider;
 
     var context = services.GetRequiredService<ApplicationContext>();
+    context.Database.EnsureDeleted();
     context.Database.EnsureCreated();
+
+    var person = context.Add<Person>(new()
+    {
+        Firstname = "admin",
+        Lastname = "admin"
+    });
+    var user = context.Add<User>(new()
+    {
+        Person = person.Entity
+    });
+
+    context.SaveChanges();
 }
 
 app.UseHttpsRedirection();

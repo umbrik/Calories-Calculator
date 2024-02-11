@@ -25,7 +25,7 @@ public class MealController : ControllerBase
     }
 
     [HttpPut]
-    public bool Put([FromQuery] int personId,
+    public IActionResult Put([FromQuery] int personId,
         [FromQuery] int foodId,
         [FromQuery] float weight)
     {
@@ -36,6 +36,6 @@ public class MealController : ControllerBase
             Weight = weight,
         });
 
-        return _context.SaveChanges() == 1;
+        return Ok("Created");
     }
 }

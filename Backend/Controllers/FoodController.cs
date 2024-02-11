@@ -34,7 +34,7 @@ public class FoodController : ControllerBase
     }
 
     [HttpPut]
-    public bool Put([FromBody] PutFood food)
+    public IActionResult Put([FromBody] PutFood food)
     {
         _context.Add<Food>(new()
         {
@@ -47,7 +47,7 @@ public class FoodController : ControllerBase
             Sugar = food.Sugar,
         });
 
-        return _context.SaveChanges() == 1;
+        return Ok("Created");
     }
 
     [HttpPatch]
@@ -67,6 +67,6 @@ public class FoodController : ControllerBase
         foodEntity.Carbohydrate = food.Carbohydrate ?? foodEntity.Carbohydrate;
         foodEntity.Fiber = food.Fiber ?? foodEntity.Fiber;
         foodEntity.Sugar = food.Sugar ?? foodEntity.Sugar;
-        return Ok(_context.SaveChanges() == 1);
+        return Ok("Updated");
     }
 }

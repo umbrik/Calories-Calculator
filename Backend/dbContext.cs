@@ -5,7 +5,7 @@ namespace Calories_Calculator.Database
 {
     public class ApplicationContext : DbContext
     {
-        public ApplicationContext (DbContextOptions<ApplicationContext> options) : base(options)
+        public ApplicationContext(DbContextOptions<ApplicationContext> options) : base(options)
         {
         }
 

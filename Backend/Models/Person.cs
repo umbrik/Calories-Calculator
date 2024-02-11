@@ -5,7 +5,8 @@ public class Person : BaseEntity
     public int Id { get; set; }
     public string? Firstname { get; set; }
     public string? Lastname { get; set; }
-    public string Fullname {
+    public string Fullname
+    {
         get => string.Join(" ", [Firstname, Lastname]);
     }
     public string? UserId { get; set; }

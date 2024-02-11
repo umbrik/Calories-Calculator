@@ -4,10 +4,10 @@ public class Food : BaseEntity
 {
     public int Id { get; set; }
     public required string Name { get; set; }
-    public required int Calories { get; set; }
-    public required int Protein { get; set; }
-    public required int Fat { get; set; }
-    public required int Carbohydrate { get; set; }
-    public required int Fiber { get; set; }
-    public required int Sugar { get; set; }
+    public required float Calories { get; set; }
+    public required float Protein { get; set; }
+    public required float Fat { get; set; }
+    public required float Carbohydrate { get; set; }
+    public required float Fiber { get; set; }
+    public required float Sugar { get; set; }
 }

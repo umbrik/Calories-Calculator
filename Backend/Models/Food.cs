@@ -3,12 +3,12 @@ using Calories_Calculator.Entities;
 
 namespace Calories_Calculator.Models;
 
-public class GetFood
+public class GetFoodDto
 {
     public int? Id { get; set; }
 }
 
-public class PutFood
+public class PutFoodDto
 {
     [MinLength(3)]
     public string Name { get; set; }
@@ -20,7 +20,7 @@ public class PutFood
     public float Sugar { get; set; }
 }
 
-public class PatchFood
+public class PatchFoodDto
 {
     public int Id { get; set; }
     public string? Name { get; set; }
@@ -43,7 +43,7 @@ public class FoodDto
     public float Fiber { get; set; }
     public float Sugar { get; set; }
 
-    public static explicit operator FoodDto(Food v) => new FoodDto()
+    public static explicit operator FoodDto(Food v) => new()
     {
         Id = v.Id,
         Name = v.Name,

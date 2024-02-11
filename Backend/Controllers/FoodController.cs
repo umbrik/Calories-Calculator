@@ -20,7 +20,7 @@ public class FoodController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult Get([FromBody] GetFood? food)
+    public IActionResult Get([FromBody] GetFoodDto? food)
     {
         if (food?.Id is null)
         {
@@ -33,7 +33,7 @@ public class FoodController : ControllerBase
     }
 
     [HttpPut]
-    public IActionResult Put([FromBody] PutFood food)
+    public IActionResult Put([FromBody] PutFoodDto food)
     {
         _context.Add<Food>(new()
         {
@@ -50,7 +50,7 @@ public class FoodController : ControllerBase
     }
 
     [HttpPatch]
-    public IActionResult Patch([FromBody] PatchFood food)
+    public IActionResult Patch([FromBody] PatchFoodDto food)
     {
         var foodEntity = _context.Foods.Find(food.Id);
 

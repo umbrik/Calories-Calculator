@@ -22,7 +22,7 @@ public class MealDto
     public Food Food { get; set; } = null!;
     public required float Weight { get; set; }
 
-    public static explicit operator MealDto(Meal v) => new MealDto()
+    public static explicit operator MealDto(Meal v) => new()
     {
         Id = v.Id,
         PersonId = v.PersonId,

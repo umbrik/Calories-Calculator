@@ -1,4 +1,5 @@
-﻿using Calories_Calculator.Database;
+﻿using System.Linq;
+using Calories_Calculator.Database;
 using Calories_Calculator.Entities;
 using Calories_Calculator.Models;
 using Microsoft.AspNetCore.Mvc;
@@ -20,15 +21,15 @@ public class FoodController : ControllerBase
     }
 
     [HttpGet]
-    public IEnumerable<Food> Get([FromBody] GetFood? food)
+    public IActionResult Get([FromBody] GetFood? food)
     {
         if (food?.Id is null)
         {
-            return _context.Foods.ToList();
+            return Ok(_context.Foods.ToList());
         }
         else
         {
-            return _context.Foods.Where(x => x.Id == food.Id).ToList();
+            return Ok(_context.Foods.Where(x => x.Id == food.Id).Select(x => (FoodDto)x));
         }
     }
 

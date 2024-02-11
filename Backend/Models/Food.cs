@@ -43,18 +43,15 @@ public class FoodDto
     public float Fiber { get; set; }
     public float Sugar { get; set; }
 
-    public static explicit operator FoodDto(Food v)
+    public static explicit operator FoodDto(Food v) => new FoodDto()
     {
-        return new FoodDto()
-        {
-            Id = v.Id,
-            Name = v.Name,
-            Calories = v.Calories,
-            Protein = v.Protein,
-            Fat = v.Fat,
-            Carbohydrate = v.Carbohydrate,
-            Fiber = v.Fiber,
-            Sugar = v.Sugar,
-        };
-    }
+        Id = v.Id,
+        Name = v.Name,
+        Calories = v.Calories,
+        Protein = v.Protein,
+        Fat = v.Fat,
+        Carbohydrate = v.Carbohydrate,
+        Fiber = v.Fiber,
+        Sugar = v.Sugar,
+    };
 }

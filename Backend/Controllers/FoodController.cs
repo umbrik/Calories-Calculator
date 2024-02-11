@@ -1,5 +1,4 @@
-﻿using System.Linq;
-using Calories_Calculator.Database;
+﻿using Calories_Calculator.Database;
 using Calories_Calculator.Entities;
 using Calories_Calculator.Models;
 using Microsoft.AspNetCore.Mvc;

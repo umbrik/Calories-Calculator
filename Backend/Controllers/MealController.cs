@@ -20,9 +20,9 @@ public class MealController : ControllerBase
     }
 
     [HttpGet]
-    public IActionResult Get()
+    public IActionResult Get([FromBody] GetMealDto meal)
     {
-        return Ok(_context.Meals.Where(x => x.PersonId == 1));
+        return Ok(_context.Meals.Where(x => x.PersonId == meal.PersonId).Select(x => (MealDto)x));
     }
 
     [HttpPut]
@@ -34,6 +34,8 @@ public class MealController : ControllerBase
             FoodId = meal.FoodId,
             Weight = meal.Weight,
         });
+
+        _context.SaveChanges();
 
         return Ok("Created");
     }

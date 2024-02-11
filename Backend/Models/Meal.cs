@@ -2,6 +2,11 @@ using Calories_Calculator.Entities;
 
 namespace Calories_Calculator.Models;
 
+public class GetMealDto
+{
+    public int PersonId { get; set; }
+}
+
 public class PutMealDto
 {
     public int PersonId { get; set; }

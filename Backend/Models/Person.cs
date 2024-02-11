@@ -11,4 +11,5 @@ public class Person : BaseEntity
     }
     public string? UserId { get; set; }
     public User? User { get; set; } = null!;
+    public ICollection<Meal> Meals { get; } = new List<Meal>();
 }
